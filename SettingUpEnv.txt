@@ -44,3 +44,5 @@ openssl aes-256-cbc -a -salt -in NameOfFile.txt -out NameOfFile.txt.enc
 Final Decryption would look like:
 openssl aes-256-cbc -d -a -salt -in NameOfFile.txt.enc -out NameOfFile.txt
 
+9.
+
