@@ -27,4 +27,20 @@ vim ~/.zshrc
 prompt_context() {}
 
 
+8. To Encrypt a file using OpenSSL
+openssl des -in NameOfFile -out NameOfFile.txt.enc (I just put .enc at end to say it's encrypted)
+**des is the type of encryption to use (you can use others)
+** To See all the list of encryptions type: openssl list-cipher-commands
+
+To Decrypt a file using OpenSSL
+openssl des -d -in NameOfFile.txt.enc -out NameOfFile
+
+To Make the Encryption even more secure, you can add the -a -salt command
+(the -a makes the encryption plain text which is called base64 encoded since the encryption can create weird characters)
+
+So the final Encryption would look like:
+openssl aes-256-cbc -a -salt -in NameOfFile.txt -out NameOfFile.txt.enc
+
+Final Decryption would look like:
+openssl aes-256-cbc -d -a -salt -in NameOfFile.txt.enc -out NameOfFile.txt
 
