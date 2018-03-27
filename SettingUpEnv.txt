@@ -1,8 +1,30 @@
 Setting up Env
 1. Install brew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-2. Install iTerm2 - brew cask install iterm2
-3. Install Oh My Zsh - sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+2. Install git:
+brew update
+brew install git 
 
-4. Install Powerlevel9k - git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+3. Install iTerm2 - brew cask install iterm2
+4. Install Oh My Zsh - sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+5. Install Powerlevel9k - git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 (When the installation is done, edit ~/.zshrc and set ZSH_THEME="pokwerlevel9k/powerlevel9k")
+
+6. Customize iTerms with correct color and fonts
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+Fonts: iTerms - Preference - Text - Font - 14pt Meslo LG S DZ Regular for Powerline
+Color: iTerms - Preference - Colors - (Bottom Left: Color Presets - Solarized Dark)
+
+7. Hide the username@machine for ZSH
+vim ~/.zshrc
+(At the end of the line, add:)
+prompt_context() {}
+
+
+
